@@ -5,7 +5,7 @@ const platesShema = new mongoose.Schema(
         name: {
             type: String,
             required: true,
-        }, 
+        },
         description: {
             type: String,
             required: true,
@@ -19,11 +19,16 @@ const platesShema = new mongoose.Schema(
             required: true,
         },
         ingredients: [String],
-        imageUrl: String,
+        plateImge: {
+            type: String,
+            default: ""
+        },
+
+
         createdDate: {
             type: Date,
             default: Date.now,
         }
     });
 
-module.exports  = mongoose.model('plates', platesShema)
+module.exports = mongoose.model('plates', platesShema)
